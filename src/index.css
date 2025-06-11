@@ -1,1 +1,27 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: "Montreal";
+    src: url("/fonts/NeueMontreal-Regular.ttf")format("truetype");
+}
+
+.font-montreal {
+    font-family: "Montreal";
+}
+
+body {
+    background-color: #FD2C2A;
+    /* background-color: #000; */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
