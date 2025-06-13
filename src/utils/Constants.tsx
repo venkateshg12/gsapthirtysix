@@ -15,7 +15,6 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
     size = 32,
     color = '#333',
     strokeWidth = 3,
-    className,
 }) => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -68,3 +67,24 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
 };
 
 export default HamburgerMenu;
+
+
+
+export const CircleText = () => {
+    const text = "THIRTYSIXSTUDIO — FOR ALL THINGS DIGITAL PRODUCTION — ";
+    return (
+        <div className="relative">
+            <div className="absolute left-1/2">
+                {
+                    text.split("").map((char, i) => (
+                        <span style={{
+                            transform: `translate(-20%, -20%) rotate(${i * (360 / text.length)}deg)`,
+                            transformOrigin: '0px 90px', position: "absolute"
+                        }} className="te" >{char}</span>
+                    ))
+                }
+
+            </div>
+        </div>
+    );
+};
