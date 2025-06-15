@@ -53,9 +53,7 @@ const Canvas = ({ details }: prop) => {
     }, [index])
 
     return (
-        <canvas ref={canvasRef}
-            data-scroll
-            data-scroll-speed={Math.random().toFixed(2)}
+        <canvas data-scroll-speed=".3" data-scroll data-scroll-container ref={canvasRef}
             className='absolute overflow-hidden'
             style={{ width: `${size * 1.2}px`, height: `${size * 1.2}px`, top: `${top}%`, left: `${left}%`, zIndex: `${zIndex}` }}
             id='canvas'>

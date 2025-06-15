@@ -3,33 +3,45 @@ import Canvas from './components/Canvas';
 import data from "./utils/data"
 import MainPage from './components/MainPage';
 import About from './components/About';
-import SmoothScroll from './utils/SmoothScroll';
+import LocomotiveScroll from 'locomotive-scroll'; 
+import Services from './components/Services';
 
 const App = () => {
+  useEffect(() => {
+    const locomotive = new LocomotiveScroll();
+  }, [])
   return (
     <>
-      <SmoothScroll>
-        <div className='min-h-screen w-full relative overflow-hidden'>
-          {
-            data[0].map((details, idx) => (
-              <div key={idx}>
-                <Canvas details={details} />
-              </div>
-            ))
-          }
-          <MainPage />
-        </div>
-        <div className=' min-h-screen  w-full relative overflow-hidden '>
-          {/* {
+      <div className='min-h-screen w-full relative overflow-hidden'>
+        {/* {
+          data[0].map((details, idx) => (
+            <div key={idx}>
+              <Canvas details={details} />
+            </div>
+          ))
+        } */}
+        <MainPage />
+      </div>
+      <div className=' min-h-screen  w-full relative overflow-hidden '>
+        {/* {
           data[1].map((details, idx) => (
             <div key={idx}>
             <Canvas details={details} />
             </div>
             ))
             } */}
-          <About />
-        </div>
-      </SmoothScroll>
+        <About />
+      </div>
+      <div className=' min-h-screen  w-full relative overflow-hidden '>
+        {/* {
+          data[1].map((details, idx) => (
+            <div key={idx}>
+            <Canvas details={details} />
+            </div>
+            ))
+            } */}
+        <Services />
+      </div>
     </>
   )
 }
