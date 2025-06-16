@@ -2,13 +2,16 @@ import Navbar from './Navbar';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { useRef, useState } from 'react';
+import { createContext, useState, useContext } from 'react';
+import { useColor } from '../utils/ColorContext';
 const MainPage = () => {
     const cursorRef = useRef<HTMLDivElement>(null);
     const mainText = useRef<HTMLDivElement>(null);
     const chillRef = useRef<HTMLDivElement>(null);
     const text3 = useRef<HTMLDivElement>(null);
-    const [red, setRed] = useState<boolean>(false);
+    const[red  , setRed] = useState<boolean>(false)
 
+    // const [red, setRed] = useColor(false);
     const handlered = (): void => {
         setRed(!red);
     }

@@ -15,7 +15,7 @@ const Services = () => {
             rotateX: -30,
             duration: 2,
             ease: "power3.out",
-            stagger: 0.02,
+            stagger: 0.05,
             scrollTrigger: {
                 trigger: splittext.chars,
                 start: "top 80%",
@@ -26,14 +26,14 @@ const Services = () => {
         });
     }, [])
     return (
-        <div className='w-full min-h-[screen]'>
-            <div className='flex items-end justify-center'>
+        <div id='our services' className='w-full min-h-[screen]'>
+            <div className='flex items-end justify-center px-4'>
                 <div className='flex flex-col  gap-[2rem] font-pp max-w-[48rem] 2xl:max-w-[68rem]'>
                     <h3 className='text-[1rem] 2xl:text-[2.3rem]'>
                         OUR SERVICES
                     </h3>
                     <div className='overflow-hidden relative'>
-                        <h2 className=' text-[2rem] 2xl:text-[3rem] text1 overflow-hidden'>
+                        <h2 className=' text-[1rem] md:text-[2rem] 2xl:text-[3rem] text1 overflow-hidden'>
                             We provide you with captivating design, interactive animations, reliablecode, and immaculate project coordination. Whether you
                             need an campaign built from scratch or assistance at a specific phase, we’ve got you covered.
                         </h2>

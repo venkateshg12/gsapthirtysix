@@ -6,7 +6,9 @@ import About from './components/About';
 import LocomotiveScroll from 'locomotive-scroll';
 import Services from './components/Services';
 import Accordion from './components/Accordian';
-import { Info } from 'lucide-react';
+import Info from './components/Info';
+import Last from './components/Last';
+import Footer from './components/Footer';
 
 const App = () => {
   useEffect(() => {
@@ -22,7 +24,9 @@ const App = () => {
             </div>
           ))
         } */}
+
         <MainPage />
+
       </div>
       <div className=' min-h-screen  w-full relative overflow-hidden '>
         {/* {
@@ -42,9 +46,21 @@ const App = () => {
             </div>
             ))
             } */}
+      </div>
+      <div>
         <Services />
+      </div>
+      <div>
         <Accordion />
+      </div>
+      <div className='min-h-screen w-full'>
+        <Last />
+      </div>
+      <div>
         <Info />
+      </div>
+      <div>
+        <Footer />
       </div>
     </>
   )

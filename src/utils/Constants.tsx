@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const navlinks = ["What we do", "Who we are", "How we give bac", "Talk to us"]
+export const navlinks = ["What we do", "Who we are", "our services", "connect with us"]
 
 
 
