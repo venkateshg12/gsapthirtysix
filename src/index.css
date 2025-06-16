@@ -26,6 +26,9 @@
 
 .font-ppmedium {
     font-family: "PPmedium";
+    box-shadow: none;
+    text-shadow: none;
+    font-weight: 200;
 }
 
 body {
@@ -40,8 +43,8 @@ body {
         @apply absolute w-[100%] h-[100%];
         animation: rotate-circle 3s linear infinite;
     }
+   
 }
-
 .te {
     font-family: 'Kanit';
 }
@@ -66,3 +69,4 @@ body {
         transform: translateY(0);
     }
 }
+

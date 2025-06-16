@@ -1,10 +1,12 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import Canvas from './components/Canvas';
 import data from "./utils/data"
 import MainPage from './components/MainPage';
 import About from './components/About';
-import LocomotiveScroll from 'locomotive-scroll'; 
+import LocomotiveScroll from 'locomotive-scroll';
 import Services from './components/Services';
+import Accordion from './components/Accordian';
+import { Info } from 'lucide-react';
 
 const App = () => {
   useEffect(() => {
@@ -41,6 +43,8 @@ const App = () => {
             ))
             } */}
         <Services />
+        <Accordion />
+        <Info />
       </div>
     </>
   )

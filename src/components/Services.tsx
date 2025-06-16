@@ -1,31 +1,29 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import  { useRef } from 'react'
+import { useRef } from 'react'
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import SplitText from 'gsap/SplitText';
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 const Services = () => {
-    const serviceRef = useRef<HTMLDivElement>(null);
+    gsap.registerPlugin(SplitText);
     useGSAP(() => {
-        if (serviceRef.current) {
-            let tl = gsap.timeline({ScrollTrigger: {
-                trigger: serviceRef.current,
-                start: "top 10%",
-                end: "bottom 20%",
-                markers: true,
+        let splittext = SplitText.create(".text1", { type: "words, chars" });
+        gsap.set(splittext.words, { overflow: "hidden" });
+        gsap.from(splittext.chars, {
+            y: "100%",
+            rotateX: -30,
+            duration: 2,
+            ease: "power3.out",
+            stagger: 0.02,
+            scrollTrigger: {
+                trigger: splittext.chars,
+                start: "top 80%",
+                end: "top 40%",
                 scrub: 1,
-                onLeaveBack: () => {
-                    // Reset animation when scrolled past
-                    tl.progress(0).pause();
-                },
-            }});
-            tl.to(serviceRef.current, {
-                opacity : 1,
-                duration: 2,
-                ease: "power4.out"
-            })
-            // createScrollTrigger(serviceRef.current!, tl);
-        }
+                toggleActions: "play none none reverse"
+            }
+        });
     }, [])
     return (
         <div className='w-full min-h-[screen]'>
@@ -34,8 +32,8 @@ const Services = () => {
                     <h3 className='text-[1rem] 2xl:text-[2.3rem]'>
                         OUR SERVICES
                     </h3>
-                    <div ref={serviceRef} className='overflow-hidden'>
-                        <h2 className='font-semibold text-[2rem] 2xl:text-[3rem] overflow-hidden'>
+                    <div className='overflow-hidden relative'>
+                        <h2 className=' text-[2rem] 2xl:text-[3rem] text1 overflow-hidden'>
                             We provide you with captivating design, interactive animations, reliablecode, and immaculate project coordination. Whether you
                             need an campaign built from scratch or assistance at a specific phase, we’ve got you covered.
                         </h2>
