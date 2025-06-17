@@ -53,7 +53,7 @@ const Canvas = ({ details }: prop) => {
     }, [index])
 
     return (
-        <canvas data-scroll-speed=".3" data-scroll data-scroll-container ref={canvasRef}
+        <canvas data-scroll-speed="0.9" data-scroll data-scroll-section ref={canvasRef}
             className='absolute overflow-hidden'
             style={{ width: `${size * 1.2}px`, height: `${size * 1.2}px`, top: `${top}%`, left: `${left}%`, zIndex: `${zIndex}` }}
             id='canvas'>

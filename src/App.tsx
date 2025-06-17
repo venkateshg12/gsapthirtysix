@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Canvas from './components/Canvas';
 import data from "./utils/data"
 import MainPage from './components/MainPage';
@@ -14,52 +14,71 @@ const App = () => {
   useEffect(() => {
     const locomotive = new LocomotiveScroll();
   }, [])
+
+  const [red, setRed] = useState<boolean>(false);
   return (
     <>
       <div className='min-h-screen w-full relative overflow-hidden'>
-        {/* {
+        {red && (
           data[0].map((details, idx) => (
             <div key={idx}>
               <Canvas details={details} />
             </div>
           ))
-        } */}
+        )}
 
-        <MainPage />
+        <MainPage red={red} setRed={setRed} />
 
       </div>
-      <div className=' min-h-screen  w-full relative overflow-hidden '>
-        {/* {
+      <div className='w-full min-h-screen relative overflow-hidden '>
+        {red && (
           data[1].map((details, idx) => (
             <div key={idx}>
-            <Canvas details={details} />
+              <Canvas details={details} />
             </div>
-            ))
-            } */}
+          ))
+        )}
         <About />
       </div>
       <div className=' min-h-screen  w-full relative overflow-hidden '>
-        {/* {
-          data[1].map((details, idx) => (
+        {red && (
+          data[2].map((details, idx) => (
             <div key={idx}>
-            <Canvas details={details} />
+              <Canvas details={details} />
             </div>
-            ))
-            } */}
-      </div>
-      <div>
+          ))
+        )}
         <Services />
-      </div>
-      <div>
         <Accordion />
       </div>
-      <div className='min-h-screen w-full'>
+      <div className='min-h-screen relative overflow-hidden w-full'>
+          {red && (
+          data[3].map((details, idx) => (
+            <div key={idx}>
+              <Canvas details={details} />
+            </div>
+          ))
+        )}
         <Last />
       </div>
-      <div>
+      <div className='min-h-screen w-full relative overflow-hidden'>
+          {red && (
+          data[7].map((details, idx) => (
+            <div key={idx}>
+              <Canvas details={details} />
+            </div>
+          ))
+        )}
         <Info />
       </div>
-      <div>
+      <div className="min-h-screen relative w-full overflow-hidden">
+         {red && (
+          data[3].map((details, idx) => (
+            <div key={idx}>
+              <Canvas details={details} />
+            </div>
+          ))
+        )}
         <Footer />
       </div>
     </>

@@ -44,7 +44,7 @@ const Last = () => {
     return (
         <div>
             <div id="connect with us" className="min-h-screen w-full">
-                <div className=' flex item-start justify-center font-pp mt-[10rem]'>
+                <div className=' flex px-3 item-start justify-center font-pp mt-[10rem]'>
                     <div className='flex items-start flex-col justify-between gap-[3rem] md:gap-[5rem] '>
                         <div className=' flex  items-center justify-center text-[1rem] lg:text-[1.7rem] 2xl:text-[3rem]  font-bold gap-[0.4rem]  mx-auto'>
                             <span>01</span>

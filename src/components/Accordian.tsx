@@ -36,7 +36,7 @@ const Accordion = () => {
     };
 
     return (
-        <div className="min-h-screen pt-20">
+        <div className="pt-20">
             <div className="">
                 <div className="overflow-hidden  flex flex-col  items-start justify-center">
                     {accordionData.map((item, index) => (

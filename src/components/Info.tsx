@@ -11,21 +11,6 @@ const Info = () => {
         let splitText2 = SplitText.create(".charsplit2", { type: "chars" });
         let splitText3 = SplitText.create(".charsplit3", { type: "chars" });
         gsap.set(".charsplit1, .charsplit2, .charsplit3", { overflow: "hidden" });
-        // gsap.from(splitText1.chars, {
-        //     opacity: 0,
-        //     yPercent: 100,
-        //     duration: 2.2,
-        //     stagger: { amount: 0.5, each: 0.3 },
-        //     scrollTrigger: {
-        //         trigger: splitText1.chars,
-        //         start: "top 90%",
-        //         end: "top 50%",
-        //         scrub: 1,
-        //         toggleActions: "play none none reverse",
-        //         markers: true,
-        //     },
-        //     ease: "power2.inOut",
-        // })
 
         interface CharSlideUpConfig {
             // Animation properties

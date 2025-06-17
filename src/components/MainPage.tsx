@@ -1,19 +1,19 @@
 import Navbar from './Navbar';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { useRef, useState } from 'react';
-import { createContext, useState, useContext } from 'react';
-import { useColor } from '../utils/ColorContext';
-const MainPage = () => {
+import React, { useRef, useState } from 'react';
+type prop = {
+    red: boolean;
+    setRed: React.Dispatch<React.SetStateAction<boolean>>;
+}
+const MainPage = ({ red, setRed }: prop) => {
     const cursorRef = useRef<HTMLDivElement>(null);
     const mainText = useRef<HTMLDivElement>(null);
     const chillRef = useRef<HTMLDivElement>(null);
     const text3 = useRef<HTMLDivElement>(null);
-    const[red  , setRed] = useState<boolean>(false)
 
-    // const [red, setRed] = useColor(false);
     const handlered = (): void => {
-        setRed(!red);
+        setRed(prev => !prev);
     }
 
     useGSAP(() => {
@@ -88,17 +88,17 @@ const MainPage = () => {
             });
         }
 
-        gsap.fromTo(text3.current, 
-            { 
-                y : "100%",
-                opacity : 0,
+        gsap.fromTo(text3.current,
+            {
+                y: "100%",
+                opacity: 0,
             },
-            { 
-                y : 0,
+            {
+                y: 0,
                 opacity: 1,
                 duration: 1.5,
                 ease: "power3.out"
-            }, 
+            },
         )
 
 
@@ -129,12 +129,24 @@ const MainPage = () => {
                         </div>
                     </div>
                 </div>
-                <div ref={chillRef}  onClick={handlered} className='text-center w-full md:text-[9vw]  lg:text-[11vw] mt-3 font-pp lg:tracking-[1.5rem] z-[1] font-pp hidden md:block'>
+                <div ref={chillRef} onClick={handlered} className='text-center w-full md:text-[9vw]  lg:text-[11vw] mt-3 font-pp lg:tracking-[1.5rem] z-[1] font-pp hidden md:block'>
                     <h1 ref={text3} >Thirtysixstudio</h1>
                 </div>
                 <div className='md:hidden leading-[9rem] mt-3 px-4 max-[479px]:text-[25vw] max-[479px]:leading-[23vw] block text-[10rem]'>
                     <h1>Thirty</h1>
-                    <h1>Six</h1>
+                    <div className='relative flex items-center '>
+                        <h1>Six</h1>
+                        <div onClick={() => {
+                            handlered();
+                            if (!red) {
+                                gsap.to('body', { backgroundColor: "#FD2C2A", duration: 2, ease: "power4.out" });
+                            } else {
+                                gsap.to('body', { backgroundColor: "#FFFFFF", duration: 2, ease: "power4.out" });
+                            }
+                        }}>
+                            <div className={`w-[5rem] h-[5rem] absolute max-[480px]:w-[10vw] max-[480px]:h-[10vw] max-[765px]:-translate-y-[15%] rounded-full ${red ? 'bg-black' : 'bg-red-500'} `} />
+                        </div>
+                    </div>
                     <h1>Studio</h1>
                 </div>
             </div>
