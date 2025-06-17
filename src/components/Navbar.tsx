@@ -5,9 +5,9 @@ import gsap from "gsap";
 
 const Navbar = () => {
     const [openNav, setOpenNav] = useState<boolean>(false);
-    const navRef = useRef(null);
-    const mobileMenuRef = useRef(null);
-    const mobileNavRef = useRef(null);
+    const navRef = useRef<HTMLElement>(null);
+    const mobileMenuRef = useRef<HTMLDivElement>(null);
+    const mobileNavRef = useRef<HTMLDivElement>(null);
     const originalBgColor = useRef<string>("");
     const colorRef = useRef<HTMLDivElement>(null);
 
@@ -52,7 +52,7 @@ const Navbar = () => {
 
     useGSAP(() => {
         const navLinks = navRef.current?.querySelectorAll(".nav-link");
-
+        if(!navLinks) return;
         navLinks.forEach((link: Element) => {
             const underline = link.querySelector(".underline");
 

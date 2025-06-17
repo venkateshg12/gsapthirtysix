@@ -2,8 +2,6 @@ import { useState } from 'react';
 import { CloseButton, OpenButton } from '../utils/Constants';
 
 const Accordion = () => {
-    const [openIndex, setOpenIndex] = useState(null);
-
     const accordionData = [
         {
             title: "CREATIVE",
@@ -30,6 +28,8 @@ const Accordion = () => {
             content: ["Social Ads", "Websites", "AR Filters and Experiences", "Display Ads (Html5, Static, Rich media)", "Digital Out of Home", "Static and Animated Assets", "Digital Installations"],
         },
     ];
+
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     const toggleAccordion = (index: number) => {
         setOpenIndex(openIndex === index ? null : index);

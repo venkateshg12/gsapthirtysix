@@ -1,23 +1,24 @@
 import { useEffect, useRef, useState } from "react";
 
 const Cursor = () => {
-    const cursorRef = useRef(null);
-    const followRef = useRef(null);
+    const cursorRef = useRef<HTMLDivElement>(null);
+    const followRef = useRef<HTMLDivElement>(null);
     const [isHovering, setIsHovering] = useState(false);
 
     useEffect(() => {
         // Hide default cursor
         document.body.style.cursor = "none";
 
-        const handleMouseMove = (event) => {
+        const handleMouseMove = (event: MouseEvent) => {
             const target = event.target;
             const cursor = cursorRef.current;
             const follow = followRef.current;
 
             if (!cursor || !follow) return;
 
+
             // Check if hovering over a button (anchor tag)
-            if (target.tagName === "A") {
+            if (target instanceof HTMLAnchorElement) {
                 setIsHovering(true);
                 
                 // Hide cursor dot
@@ -32,7 +33,7 @@ const Cursor = () => {
                 setIsHovering(false);
                 
                 // Move cursor and follow to mouse position
-                const moveElement = (element) => {
+                const moveElement = (element: HTMLDivElement) => {
                     element.style.top = event.clientY + "px";
                     element.style.left = event.clientX + "px";
                 };

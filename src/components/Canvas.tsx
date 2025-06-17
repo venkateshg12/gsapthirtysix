@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import images from "../utils/images";
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -17,7 +17,7 @@ type prop = {
     details: DetailItem;
 }
 const Canvas = ({ details }: prop) => {
-    const { startIndex, numImages, duration, size, top, left, zIndex } = details;
+    const { startIndex, numImages, size, top, left, zIndex } = details;
     const canvasRef = useRef<HTMLCanvasElement>(null)
 
     const [index, setIndex] = useState(startIndex);

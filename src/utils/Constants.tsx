@@ -98,7 +98,7 @@ export const OpenButton = ({ className = '' }: prop) => {
     console.log('Background color:', bgColor);
     return (
         <>
-            <button className={`flex items-center justify-center rounded-4xl px-4 py-2 ${bgColor == 'white' ? outline-gray-200 : ' '} outline-1 ${className || ''}`}>
+            <button className={`flex items-center justify-center rounded-4xl px-4 py-2 ${bgColor == 'white' ? 'outline-gray-200' : ' '} outline-1 ${className || ''}`}>
                 <div>
                     <svg width="20px" height="20px" viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" enableBackground="new 0 0 76.00 76.00" xmlSpace="preserve">
                         <path fill="#000000" fillOpacity="1" strokeWidth="0.2" strokeLinejoin="round" d="M 35,19L 41,19L 41,35L 57,35L 57,41L 41,41L 41,57L 35,57L 35,41L 19,41L 19,35L 35,35L 35,19 Z " />

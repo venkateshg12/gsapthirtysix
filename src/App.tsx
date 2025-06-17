@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 const App = () => {
   useEffect(() => {
     const locomotive = new LocomotiveScroll();
+    return () => locomotive.destroy();
   }, [])
 
   const [red, setRed] = useState<boolean>(false);
@@ -52,7 +53,7 @@ const App = () => {
         <Accordion />
       </div>
       <div className='min-h-screen relative overflow-hidden w-full'>
-          {red && (
+        {red && (
           data[3].map((details, idx) => (
             <div key={idx}>
               <Canvas details={details} />
@@ -62,7 +63,7 @@ const App = () => {
         <Last />
       </div>
       <div className='min-h-screen w-full relative overflow-hidden'>
-          {red && (
+        {red && (
           data[7].map((details, idx) => (
             <div key={idx}>
               <Canvas details={details} />
@@ -72,7 +73,7 @@ const App = () => {
         <Info />
       </div>
       <div className="min-h-screen relative w-full overflow-hidden">
-         {red && (
+        {red && (
           data[3].map((details, idx) => (
             <div key={idx}>
               <Canvas details={details} />

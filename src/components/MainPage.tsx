@@ -1,7 +1,7 @@
 import Navbar from './Navbar';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 type prop = {
     red: boolean;
     setRed: React.Dispatch<React.SetStateAction<boolean>>;
